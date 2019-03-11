@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://pubg.op.gg/sitemaps/base-index.xml
+Sitemap: https://pubg.op.gg/sitemaps/player-index.xml
+Sitemap: https://pubg.op.gg/sitemaps/all-player-index.xml
