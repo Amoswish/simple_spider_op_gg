@@ -28,8 +28,12 @@ class Myspider(scrapy.Spider):
         leaderboard = []
         leaderboard_top_3 = page.find_all('li',attrs={'class':'leader-board-top3__item '})
         for i,item_top3 in enumerate(leaderboard_top_3):
-            # 用户id
             templeaderboardrow = []
+            # 用户排名
+            playerrank = item_top3.find('span',attrs={'class':'leader-board-top3__rank'}).get_text()
+            templeaderboardrow.append(playerrank)
+            # 用户id
+
             playerid = item_top3.find('span',attrs={'class':'leader-board-top3__nickname'}).find('a').get_text()
             templeaderboardrow.append(playerid)
             # sp
@@ -67,6 +71,9 @@ class Myspider(scrapy.Spider):
             if(i<51):
                 templeaderboardrow = []
                 item_td = item_tr.find_all('td')
+                #用户排名
+                playerrank = item_td[0].find('span', attrs={'class': 'leader-board__number'}).get_text()
+                templeaderboardrow.append(playerrank)
                 # 用户id
                 # print(i)
                 playerid = item_td[1].find('a', attrs={'class': 'leader-board__nickname'}).get_text()

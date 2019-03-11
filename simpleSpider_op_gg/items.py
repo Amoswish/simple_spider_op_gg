@@ -12,6 +12,8 @@ class SimplespiderOpGgItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     #排行榜
+    # #用户排名
+    # playerrank = scrapy.Field()
     # #用户id
     # playerid = scrapy.Field()
     # #sp
